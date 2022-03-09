@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.heroes.HeroesFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvHeroes"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_4"
+        tools:listitem="@layout/item_hero" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnRandom"
+        style="@style/button_default"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/margin_card_item_horizontal"
+        android:text="@string/random"
+        android:paddingStart="4dp"
+        android:visibility="visible"
+        app:drawableLeftCompat="@drawable/button_default_drawable" />
+
+</RelativeLayout>

@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_4">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!--region top info bar-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_custom_toolbar"
+            android:background="@color/color_3">
+
+            <ImageView
+                android:id="@+id/ivEarth"
+                android:layout_width="@dimen/size_image_icon"
+                android:layout_height="@dimen/size_image_icon"
+                android:layout_centerVertical="true"
+                android:layout_margin="@dimen/default_margin"
+                android:src="@drawable/ic_earth" />
+
+            <TextView
+                android:id="@+id/tvPublisher"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/ivEarth"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_small" />
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_huge" />
+
+            <ImageView
+                android:id="@+id/ivGender"
+                android:layout_width="@dimen/size_image_icon"
+                android:layout_height="@dimen/size_image_icon"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true" />
+
+        </RelativeLayout>
+        <!--endregion top info bar-->
+
+        <!--region power stats-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--region image-->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvImageContainer"
+                android:layout_width="@dimen/size_custom_image"
+                android:layout_height="@dimen/size_custom_image"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="@dimen/margin_card_default"
+                app:cardCornerRadius="@dimen/radius_card_circle_2"
+                app:cardElevation="@dimen/elevation_card">
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+                    <ImageView
+                        android:id="@+id/ivHero"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:scaleType="centerCrop" />
+
+                    <ImageView
+                        android:layout_width="@dimen/size_image_icon"
+                        android:layout_height="@dimen/size_image_icon"
+                        android:layout_centerInParent="true"
+                        android:layout_margin="10dp"
+                        android:elevation="@dimen/elevation_card"
+                        android:src="@drawable/ic_zoom" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+            <!--endregion image-->
+
+            <!--region left & right info bars-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:elevation="@dimen/elevation_card_plus"
+                android:orientation="horizontal">
+
+                <!--region left bar-->
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@id/llMid">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="@dimen/margin_info_bar"
+                        app:cardElevation="@dimen/elevation_card_info_bar">
+
+                        <LinearLayout
+                            android:layout_width="@dimen/size_layout_info_bar"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <!--region Intelligence-->
+                            <RelativeLayout style="@style/relative_stats">
+
+                                <TextView
+                                    style="@style/text_view_stats_info_left"
+                                    android:layout_toStartOf="@id/tvIntelligence"
+                                    android:text="@string/power_intelligence" />
+
+                                <TextView
+                                    android:id="@+id/tvIntelligence"
+                                    style="@style/text_view_stats_value_left" />
+
+                            </RelativeLayout>
+                            <!--endregion-->
+
+                            <!--region Strength-->
+                            <RelativeLayout style="@style/relative_stats">
+
+                                <TextView
+                                    style="@style/text_view_stats_info_left"
+                                    android:layout_toStartOf="@+id/tvStrength"
+                                    android:text="@string/power_strength" />
+
+                                <TextView
+                                    android:id="@+id/tvStrength"
+                                    style="@style/text_view_stats_value_left" />
+
+                            </RelativeLayout>
+                            <!--endregion-->
+
+                            <!--region Speed-->
+                            <RelativeLayout style="@style/relative_stats_end">
+
+                                <TextView
+                                    style="@style/text_view_stats_info_left"
+                                    android:layout_toStartOf="@+id/tvSpeed"
+                                    android:text="@string/power_speed" />
+
+                                <TextView
+                                    android:id="@+id/tvSpeed"
+                                    style="@style/text_view_stats_value_left" />
+
+                            </RelativeLayout>
+                            <!--endregion-->
+
+                        </LinearLayout>
+                        <!--endregion-->
+
+                    </androidx.cardview.widget.CardView>
+
+                </RelativeLayout>
+                <!--endregion left bar-->
+
+                <View
+                    android:id="@+id/llMid"
+                    android:layout_width="80dp"
+                    android:layout_height="0dp"
+                    android:layout_centerHorizontal="true" />
+
+                <!--region right bar-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/llMid">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_info_bar"
+                        app:cardElevation="@dimen/elevation_card_info_bar">
+
+                        <LinearLayout
+                            android:layout_width="@dimen/size_layout_info_bar"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:orientation="vertical">
+
+                            <!--region Durability-->
+                            <RelativeLayout style="@style/relative_stats">
+
+                                <TextView
+                                    android:id="@+id/tvDurability"
+                                    style="@style/text_view_stats_value_right" />
+
+                                <TextView
+                                    style="@style/text_view_stats_info_right"
+                                    android:layout_toEndOf="@+id/tvDurability"
+                                    android:text="@string/durability" />
+
+                            </RelativeLayout>
+                            <!--endregion-->
+
+                            <!--region Power-->
+                            <RelativeLayout style="@style/relative_stats">
+
+                                <TextView
+                                    android:id="@+id/tvPower"
+                                    style="@style/text_view_stats_value_right" />
+
+                                <TextView
+                                    style="@style/text_view_stats_info_right"
+                                    android:layout_toEndOf="@+id/tvPower"
+                                    android:text="@string/power" />
+
+                            </RelativeLayout>
+                            <!--endregion-->
+
+                            <!--region Combat-->
+                            <RelativeLayout style="@style/relative_stats_end">
+
+                                <TextView
+                                    android:id="@+id/tvCombat"
+                                    style="@style/text_view_stats_value_right" />
+
+                                <TextView
+                                    style="@style/text_view_stats_info_right"
+                                    android:layout_toEndOf="@id/tvCombat"
+                                    android:text="@string/power_combat" />
+
+                            </RelativeLayout>
+                            <!--endregion-->
+
+                        </LinearLayout>
+                        <!--endregion-->
+
+                    </androidx.cardview.widget.CardView>
+                    <!--endregion-->
+
+                </LinearLayout>
+                <!--endregion right bar-->
+
+            </RelativeLayout>
+            <!--endregion left & right info bars-->
+
+        </RelativeLayout>
+        <!--endregion power stats-->
+
+        <LinearLayout
+            android:layout_marginBottom="@dimen/margin_card_item_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvFullName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_large"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/size_icon_image_item"
+                    android:layout_height="@dimen/size_icon_image_item"
+                    android:layout_marginEnd="@dimen/default_margin_small"
+                    android:src="@drawable/ic_baseline_map_24" />
+
+                <TextView
+                    android:id="@+id/tvPlaceOfBirth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="italic" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!--region appearance-->
+        <androidx.cardview.widget.CardView style="@style/common_card_view">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/padding_info">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/size_icon_image_item"
+                            android:layout_height="@dimen/size_icon_image_item"
+                            android:layout_marginEnd="@dimen/default_margin_small"
+                            android:src="@drawable/ic_weight" />
+
+                        <TextView
+                            android:id="@+id/tvWeight"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/size_icon_image_item"
+                            android:layout_height="@dimen/size_icon_image_item"
+                            android:layout_marginEnd="@dimen/default_margin_small"
+                            android:src="@drawable/ic_height" />
+
+                        <TextView
+                            android:id="@+id/tvHeight"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/padding_info">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/size_icon_image_item"
+                            android:layout_height="@dimen/size_icon_image_item"
+                            android:layout_marginEnd="@dimen/default_margin_small"
+                            android:src="@drawable/ic_eye" />
+
+                        <TextView
+                            android:id="@+id/tvEye"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/size_icon_image_item"
+                            android:layout_height="@dimen/size_icon_image_item"
+                            android:layout_marginEnd="@dimen/default_margin_small"
+                            android:src="@drawable/ic_race" />
+
+                        <TextView
+                            android:id="@+id/tvRace"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+        <!--endregion appearance-->
+
+        <!--region egos-->
+        <androidx.cardview.widget.CardView style="@style/common_card_view">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_info">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/size_icon_image_item"
+                        android:layout_height="@dimen/size_icon_image_item"
+                        android:layout_marginEnd="@dimen/default_margin_small"
+                        android:src="@drawable/ic_work" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/work" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvWork"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+        <!--endregion egos-->
+
+        <!--region egos-->
+        <androidx.cardview.widget.CardView style="@style/common_card_view">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_info">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/size_icon_image_item"
+                        android:layout_height="@dimen/size_icon_image_item"
+                        android:layout_marginEnd="@dimen/default_margin_small"
+                        android:src="@drawable/ic_intelligence" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/egos" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvEgos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+        <!--endregion egos-->
+
+        <!--region relatives-->
+        <LinearLayout
+            android:id="@+id/llRelatives"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_card_item_horizontal"
+            android:layout_marginEnd="@dimen/margin_card_item_horizontal"
+            android:layout_marginBottom="@dimen/margin_card_item_vertical"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView style="@style/item_card_view">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/color_3"
+                    android:paddingStart="@dimen/padding_default"
+                    android:paddingTop="@dimen/padding_item_text_vertical"
+                    android:paddingEnd="@dimen/padding_default"
+                    android:paddingBottom="@dimen/padding_item_text_vertical">
+
+                    <TextView
+                        android:id="@+id/tvItem"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/relatives"
+                        android:textColor="@color/white" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvRelatives"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+        <!--endregion relatives-->
+
+        <!--region relatives-->
+        <LinearLayout
+            android:id="@+id/llAffiliation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_card_item_horizontal"
+            android:layout_marginEnd="@dimen/margin_card_item_horizontal"
+            android:layout_marginBottom="@dimen/margin_card_item_vertical"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView style="@style/item_card_view">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/color_3"
+                    android:paddingStart="@dimen/padding_default"
+                    android:paddingTop="@dimen/padding_item_text_vertical"
+                    android:paddingEnd="@dimen/padding_default"
+                    android:paddingBottom="@dimen/padding_item_text_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/affiliation"
+                        android:textColor="@color/white" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvAffiliation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+        <!--endregion affiliation-->
+
+    </LinearLayout>
+
+</ScrollView>

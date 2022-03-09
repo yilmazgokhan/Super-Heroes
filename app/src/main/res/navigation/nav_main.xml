@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/heroesFragment">
+
+    <fragment
+        android:id="@+id/heroesFragment"
+        android:name="com.yilmazgokhan.superhero.ui.heroes.HeroesFragment"
+        android:label="fragment_heroes"
+        tools:layout="@layout/fragment_heroes" >
+        <action
+            android:id="@+id/action_heroesFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.yilmazgokhan.superhero.ui.detail.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" >
+        <argument
+            android:name="hero_id"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_detailFragment_to_photoViewerFragment"
+            app:destination="@id/photoViewerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/photoViewerFragment"
+        android:name="com.yilmazgokhan.superhero.ui.photo_viewer.PhotoViewerFragment"
+        android:label="fragment_photo_viewer"
+        tools:layout="@layout/fragment_photo_viewer" >
+        <argument
+            android:name="photoUrl"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+</navigation>

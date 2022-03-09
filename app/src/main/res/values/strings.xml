@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Super Heroes</string>
+    <string name="dialog_ok">OK</string>
+    <string name="power_intelligence">INTELLIGENCE</string>
+    <string name="power_strength">STRENGTH</string>
+    <string name="power_speed">SPEED</string>
+    <string name="durability">DURABILITY</string>
+    <string name="power">POWER</string>
+    <string name="power_combat">COMBAT</string>
+    <string name="work">Work</string>
+    <string name="egos">Egos</string>
+    <string name="relatives">Relatives</string>
+    <string name="affiliation">Affiliations</string>
+
+    <!--region error messages-->
+    <string name="message_no_data">Connection error! Please try again</string>
+    <string name="random">Random</string>
+    <!--endregion-->
+</resources>
